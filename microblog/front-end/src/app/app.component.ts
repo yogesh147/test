@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
    */
   public new_post: any;
 
-  constructor(private _blogPostService: BlogPostService, private _userService: UserService) { }
+  constructor(private _blogPostService: BlogPostService, public _userService: UserService) { }
 
   ngOnInit() {
     this.getPosts();
