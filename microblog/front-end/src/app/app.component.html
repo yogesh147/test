@@ -1,46 +1,48 @@
-<h2>Log In</h2>
-<div class="row" *ngIf="!_userService.token">
-  <div class="col-sm-4">
-    <label>Username:</label><br />
-    <input type="text" name="login-username" [(ngModel)]="user.username">
-    <span *ngFor="let error of _userService.errors.username"><br />{{ error }}</span></div>
-  <div class="col-sm-4">
-    <label>Password:</label><br />
-    <input type="password" name="login-password" [(ngModel)]="user.password">
-    <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
-  </div>
-  <div class="col-sm-4">
-    <button (click)="login()" class="btn btn-primary">Log In</button>&nbsp;
-  </div>
-  <div class="col-sm-12">
-    <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
-  </div>
-</div>
-<div class="row" *ngIf="_userService.token">
-  <div class="col-sm-12">You are logged in as {{ _userService.username }}.<br />
-    Token Expires: {{ _userService.token_expires }}<br />
-    <button (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>&nbsp;
-    <button (click)="logout()" class="btn btn-primary">Log Out</button>&nbsp;
-  </div>
-</div>
-
-<h2 class="mt-3">Micro Blog Posts</h2>
-<div *ngFor="let post of posts">
-  <div class="row mb-3">
-    <label class="col-md-2">By:</label>
-    <div class="col-md-2 mb-1">{{ post.user }}</div>
-    <label class="col-md-2">Date:</label>
-    <div class="col-md-6">{{ post.date }}</div>
-    <div class="col-md-12">{{ post.body }}</div>
-  </div>
-</div>
-
-<h3>Create a new postt:</h3>
-
-<div class="row mb-1">
-  <label class="col-md-3">Enter your postss:</label>
-  <div class="col-md-9 mb-1"><input type="text" name="body" [(ngModel)]="new_post.body"></div>
-  <div class="col-md-2 offset-3">
-    <button (click)="createPost()" class="btn btn-primary">Save</button>
-  </div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2019-06-02T17:21:05.142101243"/>
+	<style type="text/css">
+		h2.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h2.ctl { font-family: "Lohit Devanagari" }
+		h3.cjk { font-family: "Noto Sans CJK SC Regular" }
+		h3.ctl { font-family: "Lohit Devanagari" }
+	</style>
+</head>
+<body lang="en-IN" dir="ltr">
+<h2 class="western">Log In</h2>
+<p style="margin-bottom: 0cm">Username:<br/>
+<br/>
+{{ error }}</p>
+<p style="margin-bottom: 0cm">Password:<br/>
+<br/>
+{{ error }} 
+</p>
+<p style="margin-bottom: 0cm">Log In&nbsp; 
+</p>
+<p style="margin-bottom: 0cm">{{ error }}</p>
+<p>You are logged in as {{ _userService.username }}.<br/>
+Token
+Expires: {{ _userService.token_expires }}<br/>
+Refresh Token&nbsp;
+Log Out&nbsp; 
+</p>
+<h2 class="western">Micro Blog Posts</h2>
+<p style="margin-bottom: 0cm">By: 
+</p>
+<p style="margin-bottom: 0cm">{{ post.user }}</p>
+<p style="margin-bottom: 0cm">Date: 
+</p>
+<p style="margin-bottom: 0cm">{{ post.date }}</p>
+<p>{{ post.body }}</p>
+<h3 class="western">Create a new post:</h3>
+<p style="margin-bottom: 0cm">Enter your posts: 
+</p>
+<p style="margin-bottom: 0cm">Save 
+</p>
+</body>
+</html>
